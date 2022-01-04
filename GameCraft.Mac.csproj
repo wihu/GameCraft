@@ -77,7 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="GameCraft.Views\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -91,8 +90,6 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameCraft.Views\MonoGameView.cs" />
-    <Compile Include="GameCraft.Views\MonoGameViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
