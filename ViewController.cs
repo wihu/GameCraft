@@ -16,9 +16,19 @@ namespace GameCraftMac
 			base.ViewDidLoad ();
 
 			// Do any additional setup after loading the view.
+			var gameView = new GameCraft.Views.GameView(View.Bounds);
+			gameView.Frame = View.Frame;
+			View.AddSubview(gameView);
+
+			gameView.Run();
 		}
 
-		public override NSObject RepresentedObject {
+        public override void ViewDidLayout()
+        {
+			Console.WriteLine(View.Frame);
+        }
+
+        public override NSObject RepresentedObject {
 			get {
 				return base.RepresentedObject;
 			}
