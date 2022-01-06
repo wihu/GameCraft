@@ -2,12 +2,15 @@
 
 using AppKit;
 using Foundation;
+using GameCraft.Views;
 
 namespace GameCraftMac
 {
 	public partial class ViewController : NSViewController
 	{
-		public ViewController (IntPtr handle) : base (handle)
+		private GameView _gameView;
+
+        public ViewController (IntPtr handle) : base (handle)
 		{
 		}
 
@@ -16,17 +19,20 @@ namespace GameCraftMac
 			base.ViewDidLoad ();
 
 			// Do any additional setup after loading the view.
-			var gameView = new GameCraft.Views.GameView(View.Bounds);
-			gameView.Frame = View.Frame;
-			View.AddSubview(gameView);
+			_gameView = new GameCraft.Views.GameView(View.Bounds);
+			_gameView.Frame = View.Frame;
+			View.AddSubview(_gameView);
 
-			gameView.Run();
+			_gameView.Run();
 		}
 
         public override void ViewDidLayout()
         {
-			Console.WriteLine(View.Frame);
-        }
+			if (_gameView != null)
+			{
+				_gameView.Frame = View.Frame;
+			}
+		}
 
         public override NSObject RepresentedObject {
 			get {
