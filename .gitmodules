@@ -1,0 +1,4 @@
+[submodule "Externals/MonoGame"]
+	path = Externals/MonoGame
+	url = https://github.com/wihu/MonoGame.git
+	branch = gamecraft
