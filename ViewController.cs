@@ -28,11 +28,24 @@ namespace GameCraftMac
 
         public override void ViewDidLayout()
         {
+			base.ViewDidLayout();
+
 			if (_gameView != null)
 			{
 				_gameView.Frame = View.Frame;
 			}
 		}
+
+        public override void ViewDidDisappear()
+        {
+			base.ViewDidDisappear();
+
+			if (_gameView != null)
+			{
+				_gameView.Dispose();
+				_gameView = null;
+			}
+        }
 
         public override NSObject RepresentedObject {
 			get {

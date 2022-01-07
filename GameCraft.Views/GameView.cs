@@ -9,10 +9,11 @@ using OpenGL;
 
 namespace GameCraft.Views
 {
-	public class GameView : OpenTK.Platform.MacOS.MonoMacGameView
+	public class GameView : OpenTK.Platform.MacOS.MonoMacGameView, IDisposable
 	{
 		float rtri; // Angle For The Triangle 
 		float rquad; // Angle For The Quad
+		private bool _isPaused;
 
 		[Export("initWithFrame:")]
 		public GameView(CGRect frame) : this(frame, null)
@@ -43,6 +44,39 @@ namespace GameCraft.Views
 				DrawScene();
 			};
         }
+
+		~GameView()
+		{
+			Dispose(false);
+		}
+
+		public override void ViewDidMoveToWindow()
+        {
+			base.ViewDidMoveToWindow();
+
+			NSNotificationCenter.DefaultCenter.AddObserver(NSWindow.WillStartLiveResizeNotification, (n) =>
+			{
+				Console.WriteLine("Start resize");
+				Stop();
+				_isPaused = true;
+			});
+			NSNotificationCenter.DefaultCenter.AddObserver(NSWindow.DidEndLiveResizeNotification, (n) =>
+			{
+				Console.WriteLine("End resize");
+				if (_isPaused)
+                {
+					Run();
+					_isPaused = false;
+				}
+			});
+		}
+
+        protected override void Dispose(bool disposing)
+        {
+			Console.WriteLine("Disposing GameView = " + disposing);
+			NSNotificationCenter.DefaultCenter.RemoveObserver(NSWindow.WillStartLiveResizeNotification);
+			NSNotificationCenter.DefaultCenter.RemoveObserver(NSWindow.DidEndLiveResizeNotification);
+		}
 
         protected override void OnResize(EventArgs e)
         {
