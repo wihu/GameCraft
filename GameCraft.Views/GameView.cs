@@ -6,6 +6,7 @@ using CoreGraphics;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using OpenGL;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace GameCraft.Views
 {
@@ -14,6 +15,7 @@ namespace GameCraft.Views
 		float rtri; // Angle For The Triangle 
 		float rquad; // Angle For The Quad
 		private bool _isPaused;
+		private GraphicsDevice _graphicsDevice;
 
 		[Export("initWithFrame:")]
 		public GameView(CGRect frame) : this(frame, null)
@@ -54,6 +56,7 @@ namespace GameCraft.Views
         {
 			base.ViewDidMoveToWindow();
 
+			Initialize();
 			NSNotificationCenter.DefaultCenter.AddObserver(NSWindow.WillStartLiveResizeNotification, (n) =>
 			{
 				Console.WriteLine("Start resize");
@@ -83,6 +86,13 @@ namespace GameCraft.Views
             base.OnResize(e);
 			Console.WriteLine("Resize");
         }
+
+		void Initialize()
+		{
+			// init graphics device
+			var presParams = new PresentationParameters();
+			_graphicsDevice = new GraphicsDevice(GraphicsAdapter.DefaultAdapter, GraphicsProfile.Reach, presParams);
+		}
 
         private void InitGL()
 		{
