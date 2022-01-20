@@ -22,8 +22,6 @@ namespace GameCraftMac
 			_gameView = new GameCraft.Views.GameView(View.Bounds);
 			_gameView.Frame = View.Frame;
 			View.AddSubview(_gameView);
-
-			_gameView.Run();
 		}
 
         public override void ViewDidLayout()
@@ -35,6 +33,12 @@ namespace GameCraftMac
 				_gameView.Frame = View.Frame;
 			}
 		}
+
+        public override void ViewDidAppear()
+        {
+            base.ViewDidAppear();
+			_gameView.Show();
+        }
 
         public override void ViewDidDisappear()
         {

@@ -7,6 +7,7 @@ using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using OpenGL;
 using Microsoft.Xna.Framework.Graphics;
+//using MonoGame.OpenGL;
 
 namespace GameCraft.Views
 {
@@ -26,11 +27,11 @@ namespace GameCraft.Views
         {
 			Console.WriteLine("GameView INIT");
 			Resize += delegate {
-				ResizeGL(Bounds);
+				//ResizeGL(Bounds);
             };
 			Load += delegate(object src, EventArgs args)
 			{
-				InitGL();
+				//InitGL();
 				UpdateView();
 			};
 
@@ -43,7 +44,11 @@ namespace GameCraft.Views
                 }
 
 				// render scene
-				DrawScene();
+				if (_graphicsDevice != null)
+                {
+					_graphicsDevice.Clear(Microsoft.Xna.Framework.Color.CornflowerBlue);
+				}
+				//DrawScene();
 			};
         }
 
@@ -52,11 +57,18 @@ namespace GameCraft.Views
 			Dispose(false);
 		}
 
-		public override void ViewDidMoveToWindow()
+        public void Show()
+        {
+            Run();
+			// must be after starting CVDisplayLink?
+			InitializeGraphicsDevice();
+        }
+
+        public override void ViewDidMoveToWindow()
         {
 			base.ViewDidMoveToWindow();
 
-			Initialize();
+			//Initialize();
 			NSNotificationCenter.DefaultCenter.AddObserver(NSWindow.WillStartLiveResizeNotification, (n) =>
 			{
 				Console.WriteLine("Start resize");
@@ -87,7 +99,7 @@ namespace GameCraft.Views
 			Console.WriteLine("Resize");
         }
 
-		void Initialize()
+		void InitializeGraphicsDevice()
 		{
 			// init graphics device
 			var presParams = new PresentationParameters();
