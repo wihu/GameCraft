@@ -5,7 +5,7 @@ VisualStudioVersion = 25.0.1700.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameCraft.Mac", "GameCraft.Mac.csproj", "{43EF7DF3-1231-4D5D-AFF2-9A05720B48D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame.Framework.MacOS", "Externals\MonoGame\MonoGame.Framework\MonoGame.Framework.MacOS.csproj", "{B5ECE519-816B-4426-B2BB-856606655FA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame.Framework.MacOS", "Externals\MonoGame\MonoGame.Framework\MonoGame.Framework.MacOS.csproj", "{36C538E6-C32A-4A8D-A39C-566173D7118E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{43EF7DF3-1231-4D5D-AFF2-9A05720B48D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43EF7DF3-1231-4D5D-AFF2-9A05720B48D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43EF7DF3-1231-4D5D-AFF2-9A05720B48D1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B5ECE519-816B-4426-B2BB-856606655FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B5ECE519-816B-4426-B2BB-856606655FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B5ECE519-816B-4426-B2BB-856606655FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B5ECE519-816B-4426-B2BB-856606655FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36C538E6-C32A-4A8D-A39C-566173D7118E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C538E6-C32A-4A8D-A39C-566173D7118E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C538E6-C32A-4A8D-A39C-566173D7118E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C538E6-C32A-4A8D-A39C-566173D7118E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

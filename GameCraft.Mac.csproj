@@ -98,7 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Externals\MonoGame\MonoGame.Framework\MonoGame.Framework.MacOS.csproj">
-      <Project>{B5ECE519-816B-4426-B2BB-856606655FA9}</Project>
+      <Project>{36C538E6-C32A-4A8D-A39C-566173D7118E}</Project>
       <Name>MonoGame.Framework.MacOS</Name>
     </ProjectReference>
   </ItemGroup>
