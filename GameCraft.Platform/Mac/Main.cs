@@ -1,6 +1,6 @@
 ﻿using AppKit;
 
-namespace GameCraftMac
+namespace GameCraft.Platform.Mac
 {
 	static class MainClass
 	{

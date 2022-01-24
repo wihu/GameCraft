@@ -2,9 +2,8 @@
 
 using AppKit;
 using Foundation;
-using GameCraft.Views;
 
-namespace GameCraftMac
+namespace GameCraft.Platform.Mac
 {
 	public partial class ViewController : NSViewController
 	{
@@ -19,7 +18,7 @@ namespace GameCraftMac
 			base.ViewDidLoad ();
 
 			// Do any additional setup after loading the view.
-			_gameView = new GameCraft.Views.GameView(View.Bounds);
+			_gameView = new GameView(View.Bounds);
 			_gameView.Frame = View.Frame;
 			View.AddSubview(_gameView);
 		}

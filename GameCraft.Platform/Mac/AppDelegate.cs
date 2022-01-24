@@ -1,7 +1,7 @@
 ﻿using AppKit;
 using Foundation;
 
-namespace GameCraftMac
+namespace GameCraft.Platform.Mac
 {
 	[Register ("AppDelegate")]
 	public class AppDelegate : NSApplicationDelegate

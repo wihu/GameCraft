@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-namespace GameCraft.Views
+namespace GameCraft.Platform.Mac
 {
 	public class GameView : MonoMacGameView, IDisposable, IGraphicsDeviceService
 	{

@@ -6,7 +6,7 @@
 //
 using Foundation;
 
-namespace GameCraftMac
+namespace GameCraft.Platform.Mac
 {
 	[Register ("ViewController")]
 	partial class ViewController
