@@ -78,24 +78,25 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="GameCraft.Views\" />
     <Folder Include="Content\" />
+    <Folder Include="GameCraft.Platforms\" />
+    <Folder Include="GameCraft.Platforms\Mac\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="GameCraft.Platforms\Mac\Entitlements.plist" />
     <None Include="Info.plist" />
-    <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.cs" />
-    <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
+    <Compile Include="GameCraft.Platforms\Mac\GameView.cs" />
+    <Compile Include="GameCraft.Platforms\Mac\ViewController.cs" />
+    <Compile Include="GameCraft.Platforms\Mac\ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameCraft.Views\GameView.cs" />
+    <Compile Include="GameCraft.Platforms\Mac\AppDelegate.cs" />
+    <Compile Include="GameCraft.Platforms\Mac\Main.cs" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="GameCraft.Platforms\Mac\Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Externals\MonoGame\MonoGame.Framework\MonoGame.Framework.MacOS.csproj">
