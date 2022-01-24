@@ -83,8 +83,8 @@
     <Folder Include="GameCraft.Platforms\Mac\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GameCraft.Platforms\Mac\Entitlements.plist" />
     <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameCraft.Platforms\Mac\GameView.cs" />
